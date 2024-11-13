@@ -177,9 +177,9 @@ namespace OGXboxSoundtrackEditor
                     txtStatus.Text = "Failed to login to FTP server.";
                     return;
                 }
-                if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000/music"))
+                if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000/music"))
                 {
-                    if (!ftpClient.MakeDirectory(@"/E/TDATA/fffe0000/music"))
+                    if (!ftpClient.MakeDirectory(@"/F/TDATA/fffe0000/music"))
                     {
                         txtStatus.Text = "Failed to create directory on FTP server.";
                         ftpClient.Disconnect();
@@ -799,7 +799,7 @@ namespace OGXboxSoundtrackEditor
                     {
                         return;
                     }
-                    if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000/music/" + tempSong.soundtrackId.ToString("X4")))
+                    if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000/music/" + tempSong.soundtrackId.ToString("X4")))
                     {
                         return;
                     }
@@ -1014,7 +1014,7 @@ namespace OGXboxSoundtrackEditor
                 {
                     ftpClient.MakeDirectory(ftpSoundtrackIds[i]);
 
-                    if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000/music/" + ftpSoundtrackIds[i]))
+                    if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000/music/" + ftpSoundtrackIds[i]))
                     {
                         return;
                     }
@@ -1030,7 +1030,7 @@ namespace OGXboxSoundtrackEditor
                         progFtpTransfer.Value++;
                     }));
 
-                    if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000/music"))
+                    if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000/music"))
                     {
                         return;
                     }
@@ -1082,7 +1082,7 @@ namespace OGXboxSoundtrackEditor
                     SetStatus("Error: Wrong Username Or Password");
                     return;
                 }
-                if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000/music"))
+                if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000/music"))
                 {
                     SetStatus("Error: No Music To Delete");
                     ftpClient.Disconnect();
@@ -1117,7 +1117,7 @@ namespace OGXboxSoundtrackEditor
                             return;
                         }
                     }
-                    if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000/music"))
+                    if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000/music"))
                     {
                         ftpClient.Disconnect();
                         return;
@@ -1274,7 +1274,7 @@ namespace OGXboxSoundtrackEditor
                             SetStatus("Error: Wrong Username Or Password");
                             return;
                         }
-                        if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000/music"))
+                        if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000/music"))
                         {
                             SetStatus("Error: No Music To Backup");
                             ftpClient.Disconnect();
@@ -1309,7 +1309,7 @@ namespace OGXboxSoundtrackEditor
                                     writer.Write(ftpClient.downloadedBytes, 0, ftpClient.downloadedBytes.Length);
                                 }
                             }
-                            if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000/music"))
+                            if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000/music"))
                             {
                                 ftpClient.Disconnect();
                                 return;
@@ -1354,10 +1354,10 @@ namespace OGXboxSoundtrackEditor
 
         private bool ChangeToMusicDirectory()
         {
-            if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000/music"))
+            if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000/music"))
             {
                 // try to change to save folder
-                if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000"))
+                if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000"))
                 {
                     if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA"))
                     {
@@ -1373,7 +1373,7 @@ namespace OGXboxSoundtrackEditor
                         }
                         else
                         {
-                            if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000"))
+                            if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000"))
                             {
                                 ftpClient.Disconnect();
                                 return false;
@@ -1463,7 +1463,7 @@ namespace OGXboxSoundtrackEditor
                                 long fileSize = zArchive.Length;
                                 ftpClient.toUploadBytes = bReader.ReadBytes((int)fileSize);
 
-                                if (!ftpClient.ChangeWorkingDirectory(@"/E/TDATA/fffe0000/music"))
+                                if (!ftpClient.ChangeWorkingDirectory(@"/F/TDATA/fffe0000/music"))
                                 {
                                     ftpClient.Disconnect();
                                     return;
