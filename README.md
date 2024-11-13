@@ -1,4 +1,6 @@
-OGXboxSoundtrackEditor
+## OGXboxSoundtrackEditor
+Modified to work ST.DB files on the F:\ partition.
+
 ## About
 OGXboxSoundtrackEditor is an application to manipulate the music stored on the hard drive of an original Xbox console.  It has the following features:
 * Create, delete, and rename soundtracks
